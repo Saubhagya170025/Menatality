@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   onAuthStateChanged
 } from 'firebase/auth';
-
+import { getFirestore } from 'firebase/firestore';
 const FirebaseContext = createContext(null);
 
 const firebaseConfig = {
@@ -61,7 +61,7 @@ export const FirebaseProvider = (props) => {
     //this function is for google authentification
     const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider);     
 
-    const isLoggedIn = user ? true : false;
+    const isLoggedIn = !!user ;
 
     return (
         <FirebaseContext.Provider value={{ signupUserWithEmailAndPassword, signInUserWithEmailAndPass, signinWithGoogle, isLoggedIn, user }}>

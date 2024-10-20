@@ -7,6 +7,8 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
 import ChatbotComponent from "./components/ChatBot/ChatBotComponent";
+import MoodInput from './components/moodInput';
+import MoodDashboard from './components/moodDashboard';
 
 const auth = getAuth(firebaseApp);
 
@@ -49,12 +51,17 @@ function App() {
               {user ? (
                 <h1>Welcome, {user.email}!</h1>
               ) : (
-                <div className="text-center"><button className="btn bg-warning">Please log in</button></div>
+                <div className="text-center">
+                  <button className="btn bg-warning">Please log in</button>
+                  </div>
               )}
             </div>
 
           </>
         } />
+       <Route path="/mood-input" element={<MoodInput />} />
+       <Route path="/mood-dashboard" element={<MoodDashboard />} />
+
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
