@@ -59,8 +59,8 @@ function App() {
 
           </>
         } />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+       <Route path="/mood-input" element={<MoodInput />} />
+       <Route path="/mood-dashboard" element={<MoodDashboard />} />
 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
