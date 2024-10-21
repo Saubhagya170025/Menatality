@@ -21,7 +21,7 @@ import {
     },
   ];
   
-  const services = [
+  export const services = [
     {
       title: "Articles",
       icon: web,
@@ -71,6 +71,5 @@ import {
       icon: backend
     },
   ];
-  
-  export { services,};
+
   
